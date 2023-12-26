@@ -459,22 +459,14 @@ $(window).on("beforeunload", function () {
 });
 
 function onLoad() {
-  // ทำการรอให้ DOM เสร็จสมบูรณ์
-  $(document).ready(function () {
-    // เพิ่มโค้ดที่ต้องการให้ทำหลังจากที่ DOM เสร็จสมบูรณ์
-
-    // เรียกใช้ฟังก์ชัน storeDivs() เพื่อเก็บ divs ที่ต้องการใช้งาน
-    storeDivs();
-
-    // ทำงานต่อไปตามต้องการ
-    setPageHeight();
-    setItemsSpeed();
-    setPlayerToFront();
-    setPositionStartProfile();
-    resetVariables();
-    resetFunctions();
-    animateBook();
-  });
+  storeDivs();
+  setPageHeight();
+  setItemsSpeed();
+  setPlayerToFront();
+  setPositionStartProfile();
+  resetVariables();
+  resetFunctions();
+  animateBook();
 }
 
 window.addEventListener("load", onLoad);
