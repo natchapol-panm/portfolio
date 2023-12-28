@@ -362,7 +362,6 @@ function animateNoteRollContainer() {
 function animateBook() {
   coverCheckbox.addEventListener("change", function () {
     if (coverCheckbox.checked) {
-      book.style.transform = "translateX(200px)";
       cover.style.transition = "transform 1.5s, z-index 0.5s 0.5s";
       cover.style.transform = "rotateY(-180deg)";
       cover.style.zIndex = 1;
@@ -377,7 +376,6 @@ function animateBook() {
       });
       page1Checkbox.checked = false;
       page2Checkbox.checked = false;
-      book.style.transform = "translateX(0)";
       cover.style.transition = "transform 2s";
       cover.style.transform = "rotateY(0deg)";
       cover.style.zIndex = 4;
