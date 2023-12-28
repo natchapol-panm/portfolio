@@ -1238,7 +1238,7 @@ body {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   #player-container,
   #house-01 {
     transform: scale(0.8);
