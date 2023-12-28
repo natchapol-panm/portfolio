@@ -452,11 +452,35 @@ function orientPlayer() {
   }
 }
 
+function initTouchEvents() {
+  document.addEventListener("touchstart", handleStart);
+  document.addEventListener("touchmove", handleMove);
+  document.addEventListener("touchend", handleEnd);
+}
+function handleStart(e) {
+  touchStartX = e.targetTouches[0].pageX;
+  pageVerticalPositionOnTouch = pageVerticalPosition;
+}
+function handleMove(e) {
+  e.preventDefault();
+  touchCurrentX = e.targetTouches[0].pageX;
+
+  if (canScrollOrSwipe === true) {
+    detectPageVerticalPosition();
+    runTheseFunctionsAfterScrollOrSwipe();
+  }
+}
+function handleEnd(e) {
+  e.preventDefault();
+  touchEndX = e.changedTouches[0].pageX;
+}
+
 $(window).on("beforeunload", function () {
   $(window).scrollTop(0);
 });
 
 function onLoad() {
+  initTouchEvents();
   storeDivs();
   setPageHeight();
   setItemsSpeed();
