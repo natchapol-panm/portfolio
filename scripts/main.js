@@ -74,7 +74,7 @@ let canScrollOrSwipe;
 
 function handlePageScroll() {
   previousPageVerticalPosition = pageVerticalPosition;
-  pageVerticalPosition = scrollY;
+  pageVerticalPosition = window.scrollY;
   deltaPageVerticalPosition =
     pageVerticalPosition - previousPageVerticalPosition;
 
@@ -145,15 +145,7 @@ function setPositionStartProfile() {
 
 function animateRocket() {
   for (let i = 0; i < rocketArray.length; i++) {
-    $(rocketArray[i])
-      .stop()
-      .delay(i)
-      .animate(
-        {
-          left: [rocketTargetAnimateArray[i], "swing"],
-        },
-        1000
-      );
+    rocketArray[i].style.left = rocketTargetAnimateArray[i];
   }
 }
 

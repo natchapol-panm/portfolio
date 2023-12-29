@@ -643,6 +643,7 @@ body {
   height: 118px;
   transform: scale(0.7);
   left: 10%;
+  transition: left 1s ease;
 }
 
 #language-table .particle-rocket {
@@ -1243,4 +1244,3 @@ body {
     transform-origin: right;
   }
 }
-
