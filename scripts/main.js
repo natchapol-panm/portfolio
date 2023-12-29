@@ -353,47 +353,44 @@ function animateNoteRollContainer() {
 }
 
 function animateBook() {
-  coverCheckbox.addEventListener("change", function () {
-    if (coverCheckbox.checked) {
-      cover.style.transition = "transform 1.5s, z-index 0.5s 0.5s";
-      cover.style.transform = "rotateY(-180deg)";
-      cover.style.zIndex = 1;
-
-      pages.forEach(
-        (page) => (page.style.boxShadow = "0 0 2px rgb(99, 98, 98)")
-      );
-    } else {
-      pages.forEach((page, index) => {
-        page.style.transform = "rotateY(0deg)";
-        page.style.zIndex = initialZIndexPages[index];
-      });
-      page1Checkbox.checked = false;
-      page2Checkbox.checked = false;
-      cover.style.transition = "transform 2s";
-      cover.style.transform = "rotateY(0deg)";
-      cover.style.zIndex = 4;
-    }
-  });
-
-  page1Checkbox.addEventListener("change", function () {
-    if (page1Checkbox.checked) {
-      pages[0].style.transform = "rotateY(-180deg)";
-      pages[0].style.zIndex = 2;
-    } else {
-      pages[0].style.transform = "rotateY(0deg)";
-      pages[0].style.zIndex = 3;
-    }
-  });
-
-  page2Checkbox.addEventListener("change", function () {
-    if (page2Checkbox.checked) {
-      pages[1].style.transform = "rotateY(-180deg)";
-      pages[1].style.zIndex = 3;
-    } else {
-      pages[1].style.transform = "rotateY(0deg)";
-      pages[1].style.zIndex = 2;
-    }
-  });
+  // coverCheckbox.addEventListener("change", function () {
+  //   if (coverCheckbox.checked) {
+  //     cover.style.transition = "transform 1.5s, z-index 0.5s 0.5s";
+  //     cover.style.transform = "rotateY(-180deg)";
+  //     cover.style.zIndex = 1;
+  //     pages.forEach(
+  //       (page) => (page.style.boxShadow = "0 0 2px rgb(99, 98, 98)")
+  //     );
+  //   } else {
+  //     pages.forEach((page, index) => {
+  //       page.style.transform = "rotateY(0deg)";
+  //       page.style.zIndex = initialZIndexPages[index];
+  //     });
+  //     page1Checkbox.checked = false;
+  //     page2Checkbox.checked = false;
+  //     cover.style.transition = "transform 2s";
+  //     cover.style.transform = "rotateY(0deg)";
+  //     cover.style.zIndex = 4;
+  //   }
+  // });
+  // page1Checkbox.addEventListener("change", function () {
+  //   if (page1Checkbox.checked) {
+  //     pages[0].style.transform = "rotateY(-180deg)";
+  //     pages[0].style.zIndex = 2;
+  //   } else {
+  //     pages[0].style.transform = "rotateY(0deg)";
+  //     pages[0].style.zIndex = 3;
+  //   }
+  // });
+  // page2Checkbox.addEventListener("change", function () {
+  //   if (page2Checkbox.checked) {
+  //     pages[1].style.transform = "rotateY(-180deg)";
+  //     pages[1].style.zIndex = 3;
+  //   } else {
+  //     pages[1].style.transform = "rotateY(0deg)";
+  //     pages[1].style.zIndex = 2;
+  //   }
+  // });
 }
 
 function storeDivs() {
