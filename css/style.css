@@ -533,8 +533,7 @@ body {
   bottom: 20%;
   left: 7900px;
   border-radius: 2%;
-  background-image: url(../images/table-bg.jpg);
-  background-size: cover;
+  background: linear-gradient(to right, #df60e4, #7e30e1, #6d1cc9);
   border: 4px solid #ffa33c;
 }
 
@@ -1063,12 +1062,19 @@ body {
 .content-book {
   font-size: 1.5em;
   letter-spacing: 2px;
-  left: 10%;
   list-style-type: none;
+  color: aliceblue;
+  margin-top: 10px;
+  margin-left: 20px;
 }
+.content-book li {
+  margin-bottom: 10px;
+}
+
 .content-book a {
   color: aliceblue;
 }
+
 .next {
   right: 1em;
 }
@@ -1238,37 +1244,3 @@ body {
   }
 }
 
-@media screen and (max-width: 1000px) {
-  #player-container,
-  #house-01 {
-    transform: scale(0.8);
-    transform-origin: left bottom;
-  }
-  #billboard-about,
-  #billboard-skill {
-    transform: scale(0.8);
-    transform-origin: left bottom;
-  }
-  .book {
-    transform: scale(0.5);
-    transform-origin: left bottom;
-  }
-  .certification,
-  .ferris-wheel,
-  #language-table,
-  #other-skill-container,
-  .bus,
-  .bus-station {
-    transform: scale(0.7);
-    transform-origin: bottom left;
-  }
-  #start-profile .font-profile {
-    transform: translate(-50%) scale(0.55);
-    transform-origin: top;
-  }
-
-  #honor-container {
-    transform: translate(-30%) scale(0.55);
-    transform-origin: top;
-  }
-}
