@@ -470,7 +470,7 @@ $(window).on("beforeunload", function () {
 });
 
 function onLoad() {
-  // initTouchEvents();
+  initTouchEvents();
   storeDivs();
   setPageHeight();
   setItemsSpeed();
