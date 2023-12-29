@@ -183,14 +183,17 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  font-size: 2em;
-  font-weight: 600;
-  color: #fff;
   opacity: 0;
   border: 4px solid #ffa33c;
 }
+#thailand-container #note-roll-container .mid-roll .roll-text {
+  opacity: 0;
+  font-size: 2em;
+  font-weight: 600;
+  color: #fff;
+}
 
-#thailand-container #note-roll-container .mid-roll span {
+#thailand-container #note-roll-container .mid-roll p span {
   white-space: pre;
   color: #fffb73;
 }

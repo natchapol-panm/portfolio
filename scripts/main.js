@@ -23,6 +23,7 @@ const leftRoll = document.querySelector(".left-roll");
 const rightRoll = document.querySelector(".right-roll");
 const aboutText = document.querySelector(".about-text");
 const skillText = document.querySelector(".skill-text");
+const rollText = document.querySelector(".roll-text");
 const certificationDiv = document.querySelector(".certification");
 const certificationText = document.querySelector(".certification-text");
 const book = document.querySelector(".book");
@@ -150,33 +151,26 @@ function animateRocket() {
 }
 
 function animateHonorContainer() {
-  $(honorContainerDiv).stop().animate(
-    {
-      top: "0",
-    },
-    500
-  );
+  honorContainerDiv.style.transition = "top 1s ease-out";
+
+  honorContainerDiv.style.top = "0";
 }
 
 function animateBus(i) {
-  $(busArray[i]).stop().animate(
-    {
-      left: busTargetAnimateArray[i],
-    },
-    1000
-  );
+  busArray[i].style.transition = "left 0.5s ease-out";
+
+  // Apply the animation effect by changing the 'left' property
+  busArray[i].style.left = busTargetAnimateArray[i];
 }
 
 function animateOtherSkill() {
-  for (let i = 0; i < otherSkillArray.length; i++) {
-    $(otherSkillArray[i])
-      .stop()
-      .delay(i * 600)
-      .animate({
-        bottom: ["10%", "easeOutElastic"],
-      }),
-      2000;
-  }
+  otherSkillArray.forEach((element, i) => {
+    element.style.transition = "bottom 1s cubic-bezier(0.4, 0, 0.2, 1.5)";
+
+    setTimeout(() => {
+      element.style.bottom = "10%";
+    }, i * 400);
+  });
 }
 
 function positionOtherSkill() {
@@ -297,59 +291,38 @@ function animateInformation() {
 }
 
 function animateOpacityText(textClass) {
-  $(textClass)
-    .stop()
-    .animate(
-      { opacity: ["1", "swing"] },
+  textClass.style.transition = "opacity 0.3s ease-in-out";
+  textClass.style.opacity = "1";
 
-      300
-    );
+  clearTimeout(textClass.timeoutId);
+
+  textClass.timeoutId = setTimeout(() => {
+    textClass.style.transition = "";
+  }, 300);
 }
 
 function animateNoteRollContainer() {
-  $(noteRollContainerDiv)
-    .stop()
-    .animate(
-      {
-        top: ["30%", "swing"],
-      },
-      {
-        duration: 500,
-        easing: "swing",
-        complete: function () {
-          $(midRoll).stop().animate(
-            {
-              width: "100%",
-              opacity: "1",
-            },
-            {
-              duration: 500,
-              easing: "easeOutBounce",
-            }
-          );
+  noteRollContainerDiv.style.transition = "top 0.5s ease-out";
 
-          $(leftRoll).stop().animate(
-            {
-              left: "0",
-            },
-            {
-              duration: 500,
-              easing: "easeOutBounce",
-            }
-          );
+  setTimeout(() => {
+    noteRollContainerDiv.style.top = "30%";
 
-          $(rightRoll).stop().animate(
-            {
-              right: "0",
-            },
-            {
-              duration: 500,
-              easing: "easeOutBounce",
-            }
-          );
-        },
-      }
-    );
+    setTimeout(() => {
+      midRoll.style.transition = "width 0.5s ease-out, opacity 0.5s ease-out";
+      midRoll.style.width = "100%";
+      midRoll.style.opacity = "1";
+
+      setTimeout(() => {
+        rollText.style.opacity = "1";
+      }, 250);
+
+      leftRoll.style.transition = "left 0.5s ease-out";
+      leftRoll.style.left = "0";
+
+      rightRoll.style.transition = "right 0.5s ease-out";
+      rightRoll.style.right = "0";
+    }, 500);
+  }, 0);
 }
 
 function animateBook() {
@@ -465,8 +438,8 @@ function handleEnd(e) {
   touchEndX = e.changedTouches[0].pageX;
 }
 
-$(window).on("beforeunload", function () {
-  $(window).scrollTop(0);
+window.addEventListener("beforeunload", function () {
+  window.scrollTo(0, 0);
 });
 
 function onLoad() {
