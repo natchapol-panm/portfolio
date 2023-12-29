@@ -13,10 +13,10 @@
     transform: scale(0.8);
     transform-origin: left bottom;
   }
-  .book {
+  /* .book {
     transform: scale(0.5);
     transform-origin: left bottom;
-  }
+  } */
   .certification {
     transform: scale(0.7);
     transform-origin: bottom left;

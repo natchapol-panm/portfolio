@@ -945,7 +945,7 @@ body {
   left: 17800px;
 }
 
-.book {
+/* .book {
   width: 550px;
   height: 650px;
   position: absolute;
@@ -1108,7 +1108,7 @@ body {
 
 #page3 {
   z-index: 1;
-}
+} */
 
 .ground-container {
   position: absolute;
