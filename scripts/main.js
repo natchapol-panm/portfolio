@@ -235,57 +235,82 @@ function animateInformation() {
       ) {
         if (
           informationContainerArray[i] === thailandContainerDiv &&
-          canAnimateNoteRoll
+          canAnimateNoteRoll &&
+          pageVerticalPosition + 0.5 * containerDiv.offsetWidth >=
+            thailandContainerDiv.offsetLeft
         ) {
           animateNoteRollContainer();
           canAnimateNoteRoll = false;
         } else if (
           informationContainerArray[i] === languageTableDiv &&
-          canAnimateLanguageTable
+          canAnimateLanguageTable &&
+          pageVerticalPosition + 0.5 * containerDiv.offsetWidth >=
+            languageTableDiv.offsetLeft
         ) {
-          setTimeout(() => {
-            animateRocket();
-            canAnimateLanguageTable = false;
-          }, 400);
+          animateRocket();
+          canAnimateLanguageTable = false;
         } else if (
           informationContainerArray[i] === billboardAboutDiv &&
-          canAnimateAboutText
+          canAnimateAboutText &&
+          pageVerticalPosition + 0.5 * containerDiv.offsetWidth >=
+            billboardAboutDiv.offsetLeft
         ) {
           animateOpacityText(aboutText);
           canAnimateAboutText = false;
         } else if (
           informationContainerArray[i] === billboardSkillDiv &&
-          canAnimateSkillText
+          canAnimateSkillText &&
+          pageVerticalPosition + 0.5 * containerDiv.offsetWidth >=
+            billboardSkillDiv.offsetLeft
         ) {
           animateOpacityText(skillText);
           canAnimateSkillText = false;
         } else if (
           informationContainerArray[i] === honorContainerDiv &&
-          canAnimateHonorConDiv
+          canAnimateHonorConDiv &&
+          pageVerticalPosition + 0.5 * containerDiv.offsetWidth >=
+            honorContainerDiv.offsetLeft
         ) {
           animateHonorContainer();
           canAnimateHonorConDiv = false;
         } else if (
           informationContainerArray[i] === certificationDiv &&
-          canAnimateCertification
+          canAnimateCertification &&
+          pageVerticalPosition + 0.5 * containerDiv.offsetWidth >=
+            certificationDiv.offsetLeft
         ) {
           animateOpacityText(certificationText);
           canAnimateCertification = false;
         } else if (
           informationContainerArray[i] === otherSkillContainerDiv &&
-          canAnimateOtherSkill
+          canAnimateOtherSkill &&
+          pageVerticalPosition + 0.5 * containerDiv.offsetWidth >=
+            otherSkillContainerDiv.offsetLeft
         ) {
-          setTimeout(() => {
-            animateOtherSkill();
-            canAnimateOtherSkill = false;
-          }, 800);
-        } else if (informationContainerArray[i] === busStationDiv1) {
+          animateOtherSkill();
+          canAnimateOtherSkill = false;
+        } else if (
+          informationContainerArray[i] === busStationDiv1 &&
+          canAnimateBus1 &&
+          pageVerticalPosition + 0.5 * containerDiv.offsetWidth >=
+            busStationDiv1.offsetLeft
+        ) {
           animateBus(0);
           canAnimateBus1 = false;
-        } else if (informationContainerArray[i] === busStationDiv2) {
+        } else if (
+          informationContainerArray[i] === busStationDiv2 &&
+          canAnimateBus2 &&
+          pageVerticalPosition + 0.5 * containerDiv.offsetWidth >=
+            busStationDiv2.offsetLeft
+        ) {
           animateBus(1);
           canAnimateBus2 = false;
-        } else if (informationContainerArray[i] === busStationDiv3) {
+        } else if (
+          informationContainerArray[i] === busStationDiv3 &&
+          canAnimateBus3 &&
+          pageVerticalPosition + 0.5 * containerDiv.offsetWidth >=
+            busStationDiv3.offsetLeft
+        ) {
           animateBus(2);
           canAnimateBus3 = false;
         }
