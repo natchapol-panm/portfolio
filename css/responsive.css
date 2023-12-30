@@ -27,8 +27,8 @@
     transform-origin: bottom left;
   }
   #other-skill-container {
-    transform: scale(0.7);
-    transform-origin: bottom left;
+    /* transform: scale(0.7);
+    transform-origin: bottom left; */
   }
   .bus,
   .bus-station {

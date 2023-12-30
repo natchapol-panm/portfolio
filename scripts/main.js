@@ -151,7 +151,7 @@ function animateRocket() {
 }
 
 function animateHonorContainer() {
-  honorContainerDiv.style.transition = "top 1s ease-out";
+  honorContainerDiv.style.transition = "top 0.5s ease-out";
 
   honorContainerDiv.style.top = "0";
 }
@@ -243,8 +243,10 @@ function animateInformation() {
           informationContainerArray[i] === languageTableDiv &&
           canAnimateLanguageTable
         ) {
-          animateRocket();
-          canAnimateLanguageTable = false;
+          setTimeout(() => {
+            animateRocket();
+            canAnimateLanguageTable = false;
+          }, 400);
         } else if (
           informationContainerArray[i] === billboardAboutDiv &&
           canAnimateAboutText
@@ -273,8 +275,10 @@ function animateInformation() {
           informationContainerArray[i] === otherSkillContainerDiv &&
           canAnimateOtherSkill
         ) {
-          animateOtherSkill();
-          canAnimateOtherSkill = false;
+          setTimeout(() => {
+            animateOtherSkill();
+            canAnimateOtherSkill = false;
+          }, 800);
         } else if (informationContainerArray[i] === busStationDiv1) {
           animateBus(0);
           canAnimateBus1 = false;

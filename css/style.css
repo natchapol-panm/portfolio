@@ -45,7 +45,7 @@ body {
   height: 80%;
 }
 
-#start-profile .font-profile {
+.font-profile {
   position: absolute;
   width: 628px;
   height: 250px;
@@ -55,14 +55,14 @@ body {
   transform: translate(-50%);
 }
 
-#start-profile #tree-container {
+#tree-container {
   position: absolute;
   width: 100%;
   left: 0;
   bottom: 0;
 }
 
-#start-profile #tree-container #tree {
+#tree {
   height: 218px;
   width: 100%;
   background-image: url(../images/tree.png);
@@ -85,8 +85,8 @@ body {
   bottom: 20%;
   left: 2500px;
 }
-#billboard-about .about-text,
-#billboard-skill .skill-text {
+.about-text,
+.skill-text {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -99,7 +99,7 @@ body {
   color: rgb(247, 5, 235);
 }
 
-#billboard-skill .skill-text {
+.skill-text {
   left: 31%;
 }
 
@@ -115,7 +115,7 @@ body {
   height: 100%;
 }
 
-#thailand-container .thailand {
+.thailand {
   background-image: url(../images/thailand.png);
   width: 719px;
   height: 498px;
@@ -124,8 +124,7 @@ body {
   transform: translate(-50%);
   bottom: 0;
 }
-
-#thailand-container #note-roll-container {
+#note-roll-container {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -134,16 +133,16 @@ body {
   top: 0;
 }
 
-#thailand-container #note-roll-container .left-roll,
-#thailand-container #note-roll-container .right-roll {
+.left-roll,
+.right-roll {
   position: absolute;
   height: 100%;
   width: 20px;
   background: linear-gradient(#ffa33c, #fffb73);
 }
 
-#thailand-container #note-roll-container .left-roll::before,
-#thailand-container #note-roll-container .right-roll::before {
+.left-roll::before,
+.right-roll::before {
   content: "";
   position: absolute;
   height: 20px;
@@ -153,8 +152,8 @@ body {
   top: -10%;
 }
 
-#thailand-container #note-roll-container .left-roll::after,
-#thailand-container #note-roll-container .right-roll::after {
+.left-roll::after,
+.right-roll::after {
   content: "";
   position: absolute;
   height: 20px;
@@ -164,15 +163,15 @@ body {
   bottom: -10%;
 }
 
-#thailand-container #note-roll-container .left-roll {
+.left-roll {
   left: 50%;
 }
 
-#thailand-container #note-roll-container .right-roll {
+.right-roll {
   right: 50%;
 }
 
-#thailand-container #note-roll-container .mid-roll {
+.mid-roll {
   position: absolute;
   width: 0;
   left: 50%;
@@ -186,14 +185,14 @@ body {
   opacity: 0;
   border: 4px solid #ffa33c;
 }
-#thailand-container #note-roll-container .mid-roll .roll-text {
+.roll-text {
   opacity: 0;
   font-size: 2em;
   font-weight: 600;
   color: #fff;
 }
 
-#thailand-container #note-roll-container .mid-roll p span {
+.mid-roll p span {
   white-space: pre;
   color: #fffb73;
 }
@@ -209,7 +208,7 @@ body {
   transform-origin: bottom left;
 }
 
-.certification .certification-text {
+.certification-text {
   position: absolute;
   width: 70%;
   height: 100%;
@@ -222,11 +221,11 @@ body {
   opacity: 0;
 }
 
-.certification .certification-text span {
+.certification-text span {
   font-weight: 600;
 }
 
-.certification .bu-logo {
+.bu-logo {
   position: absolute;
   height: 1200px;
   width: 1200px;
@@ -245,7 +244,7 @@ body {
   width: 800px;
 }
 
-#honor-container .medal {
+.medal {
   background-image: url(../images/medal.png);
   width: 527px;
   height: 687px;
@@ -255,7 +254,7 @@ body {
   transform-origin: top right;
 }
 
-#honor-container .ribbon-honor {
+.ribbon-honor {
   background-image: url(../images/text-honor.png);
   width: 446px;
   height: 95px;
@@ -272,12 +271,12 @@ body {
   bottom: 20%;
 }
 
-.ferris-wheel .wheel-wrap {
+.wheel-wrap {
   position: relative;
   width: 100%;
   height: 100%;
   transform: translate(-50%, -50%);
-  animation: wheel-rotate 60s linear infinite;
+  animation: wheel-rotate 30s linear infinite;
 }
 .wheels {
   position: absolute;
@@ -441,7 +440,7 @@ body {
   background-image: url(../images/csharp_icon.png);
 }
 
-.ferris-wheel .stand {
+.stand {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -455,7 +454,7 @@ body {
   border-radius: 50%;
 }
 
-.ferris-wheel .stand span {
+.stand span {
   position: relative;
   z-index: 2;
   display: block;
@@ -465,8 +464,8 @@ body {
   border-radius: 50%;
 }
 
-.ferris-wheel .stand::before,
-.ferris-wheel .stand::after {
+.stand::before,
+.stand::after {
   content: "";
   position: absolute;
   z-index: 1;
@@ -476,13 +475,13 @@ body {
   top: 4px;
 }
 
-.ferris-wheel .stand::before {
+.stand::before {
   right: 50%;
   transform-origin: 100% 50%;
   transform: rotate(-77deg);
 }
 
-.ferris-wheel .stand::after {
+.stand::after {
   left: 50%;
   transform-origin: 0% 50%;
   transform: rotate(77deg);
@@ -559,37 +558,38 @@ body {
   left: 35%;
 }
 
-#language-table .language-icon {
+.language-icon {
   position: absolute;
   width: 120px;
   height: 110px;
+  transform: scale(0.7);
 }
 
-#language-table #language-icon-1 {
+#language-icon-1 {
   top: 10%;
   background-image: url(../images/html_icon.png);
   background-size: cover;
   background-position: center;
 }
-#language-table #language-icon-2 {
+#language-icon-2 {
   top: 25%;
   background-image: url(../images/css_icon.png);
   background-size: cover;
   background-position: center;
 }
-#language-table #language-icon-3 {
+#language-icon-3 {
   top: 40%;
   background-image: url(../images/js_icon.png);
   background-size: cover;
   background-position: center;
 }
-#language-table #language-icon-4 {
+#language-icon-4 {
   top: 55%;
   background-image: url(../images/csharp_icon.png);
   background-size: cover;
   background-position: center;
 }
-#language-table #language-icon-5 {
+#language-icon-5 {
   top: 70%;
   background-image: url(../images/c_icon.png);
   background-size: cover;
@@ -639,7 +639,7 @@ body {
   top: 85%;
 }
 
-#language-table .rocket {
+.rocket {
   position: absolute;
   background-image: url(../images/rocket.png);
   width: 182px;
@@ -649,7 +649,7 @@ body {
   transition: left 1s ease;
 }
 
-#language-table .particle-rocket {
+.particle-rocket {
   position: absolute;
   width: 150px;
   height: 40px;
@@ -659,7 +659,7 @@ body {
   background: linear-gradient(to left, #00d0ff, #00d0ff40, transparent);
 }
 
-#language-table .rocket::after {
+.rocket::after {
   content: "";
   position: absolute;
   width: 150px;
@@ -671,19 +671,19 @@ body {
   filter: blur(10px);
 }
 
-#language-table #rocket-1 {
+#rocket-1 {
   top: 10%;
 }
-#language-table #rocket-2 {
+#rocket-2 {
   top: 25%;
 }
-#language-table #rocket-3 {
+#rocket-3 {
   top: 40%;
 }
-#language-table #rocket-4 {
+#rocket-4 {
   top: 55%;
 }
-#language-table #rocket-5 {
+#rocket-5 {
   top: 70%;
 }
 
@@ -723,7 +723,7 @@ body {
   bottom: 0;
 }
 
-#other-skill-container .other-skill {
+.other-skill {
   position: absolute;
   width: 405px;
   height: 732px;
@@ -732,23 +732,23 @@ body {
   z-index: 1;
 }
 
-#other-skill-container #other-skill-1 {
+#other-skill-1 {
   background-image: url(../images/other-skill1.png);
   left: 17%;
 }
-#other-skill-container #other-skill-2 {
+#other-skill-2 {
   background-image: url(../images/other-skill2.png);
   left: 30%;
 }
-#other-skill-container #other-skill-3 {
+#other-skill-3 {
   background-image: url(../images/other-skill3.png);
   left: 43%;
 }
-#other-skill-container #other-skill-4 {
+#other-skill-4 {
   background-image: url(../images/other-skill4.png);
   left: 56%;
 }
-#other-skill-container #other-skill-5 {
+#other-skill-5 {
   background-image: url(../images/other-skill5.png);
   left: 69%;
 }
