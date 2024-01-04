@@ -43,7 +43,7 @@ const otherSkillArray = [];
 const busArray = [];
 
 const informationContainerArray = [
-  languageTableDiv,
+  // languageTableDiv,
   thailandContainerDiv,
   billboardAboutDiv,
   billboardSkillDiv,
