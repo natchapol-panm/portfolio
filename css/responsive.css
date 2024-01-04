@@ -1,10 +1,17 @@
 @media screen and (max-width: 640px) {
-  #player-container,
-  #house-01 {
+  #player-container {
     transform: scale(0.8);
     transform-origin: left bottom;
   }
-  #billboard-about,
+  #house-01 {
+    transform: scale(0.6);
+    transform-origin: left bottom;
+  }
+  #billboard-about {
+    transform: scale(0.8);
+    transform-origin: left bottom;
+    left: 1500px;
+  }
   #billboard-skill {
     transform: scale(0.8);
     transform-origin: left bottom;
@@ -13,10 +20,10 @@
     transform: scale(0.8);
     transform-origin: left bottom;
   }
-  /* .book {
+  .book {
     transform: scale(0.5);
     transform-origin: left bottom;
-  } */
+  }
   .certification {
     transform: scale(0.7);
     transform-origin: bottom left;
@@ -59,5 +66,8 @@
   #other-skill-container .other-skill {
     transform: scale(0.8);
     transform-origin: bottom left;
+  }
+  #tree {
+    height: 130px;
   }
 }

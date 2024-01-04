@@ -60,12 +60,15 @@ body {
   width: 100%;
   left: 0;
   bottom: 0;
+  display: flex;
+  align-items: flex-end;
 }
 
 #tree {
-  height: 218px;
+  height: 160px;
   width: 100%;
   background-image: url(../images/tree.png);
+  background-size: contain;
 }
 
 #house-01 {
@@ -948,7 +951,7 @@ body {
   left: 17800px;
 }
 
-/* .book {
+.book {
   width: 550px;
   height: 650px;
   position: absolute;
@@ -1111,7 +1114,7 @@ body {
 
 #page3 {
   z-index: 1;
-} */
+}
 
 .ground-container {
   position: absolute;
