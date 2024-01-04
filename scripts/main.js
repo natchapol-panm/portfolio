@@ -443,7 +443,7 @@ function onScroll() {
 
   scrollingTimeout = setTimeout(function () {
     pauseAnimationPlayer();
-  }, 300);
+  }, 150);
 }
 
 window.addEventListener("scroll", onScroll);
