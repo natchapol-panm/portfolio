@@ -652,28 +652,6 @@ body {
   transition: left 1s ease;
 }
 
-.particle-rocket {
-  position: absolute;
-  width: 150px;
-  height: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  left: -80%;
-  background: linear-gradient(to left, #00d0ff, #00d0ff40, transparent);
-}
-
-.rocket::after {
-  content: "";
-  position: absolute;
-  width: 150px;
-  height: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  left: -80%;
-  background: linear-gradient(to left, #00d0ff, #00d0ff40, transparent);
-  filter: blur(10px);
-}
-
 #rocket-1 {
   top: 10%;
 }
