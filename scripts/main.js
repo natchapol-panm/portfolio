@@ -43,7 +43,7 @@ const otherSkillArray = [];
 const busArray = [];
 
 const informationContainerArray = [
-  // languageTableDiv,
+  languageTableDiv,
   thailandContainerDiv,
   billboardAboutDiv,
   billboardSkillDiv,
@@ -144,11 +144,11 @@ function setPositionStartProfile() {
   startProfileDiv.style.width = containerDiv.offsetWidth + "px";
 }
 
-// function animateRocket() {
-//   for (let i = 0; i < rocketArray.length; i++) {
-//     rocketArray[i].style.left = rocketTargetAnimateArray[i];
-//   }
-// }
+function animateRocket() {
+  for (let i = 0; i < rocketArray.length; i++) {
+    rocketArray[i].style.left = rocketTargetAnimateArray[i];
+  }
+}
 
 function animateHonorContainer() {
   honorContainerDiv.style.transition = "top 0.5s ease-out";
@@ -179,13 +179,13 @@ function positionOtherSkill() {
   }
 }
 
-// function positionRockets() {
-//   for (let i = 0; i < rocketArray.length; i++) {
-//     rocketArray[i].style.left = canAnimateLanguageTable
-//       ? "10%"
-//       : rocketTargetAnimateArray[i];
-//   }
-// }
+function positionRockets() {
+  for (let i = 0; i < rocketArray.length; i++) {
+    rocketArray[i].style.left = canAnimateLanguageTable
+      ? "10%"
+      : rocketTargetAnimateArray[i];
+  }
+}
 
 function positionItemsAnimate() {
   noteRollContainerDiv.style.top = canAnimateNoteRoll ? "0" : "30%";
@@ -212,7 +212,7 @@ function opacityText() {
 
 function setAllAnimation() {
   positionItemsAnimate();
-  // positionRockets();
+  positionRockets();
   positionOtherSkill();
   opacityText();
 }
@@ -241,6 +241,14 @@ function animateInformation() {
         ) {
           animateNoteRollContainer();
           canAnimateNoteRoll = false;
+        } else if (
+          informationContainerArray[i] === languageTableDiv &&
+          canAnimateLanguageTable &&
+          pageVerticalPosition + 0.5 * containerDiv.offsetWidth >=
+            languageTableDiv.offsetLeft
+        ) {
+          animateRocket();
+          canAnimateLanguageTable = false;
         } else if (
           informationContainerArray[i] === billboardAboutDiv &&
           canAnimateAboutText &&
@@ -443,7 +451,7 @@ function onScroll() {
 
   scrollingTimeout = setTimeout(function () {
     pauseAnimationPlayer();
-  }, 150);
+  }, 300);
 }
 
 window.addEventListener("scroll", onScroll);
