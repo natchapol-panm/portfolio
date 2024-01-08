@@ -426,9 +426,9 @@ function handleEnd(e) {
   touchEndX = e.changedTouches[0].pageX;
 }
 
-window.addEventListener("beforeunload", function () {
-  window.scrollTo(0, 0);
-});
+// window.addEventListener("beforeunload", function () {
+//   window.scrollTo(0, 0);
+// });
 
 function onLoad() {
   initTouchEvents();
