@@ -1086,12 +1086,14 @@ body {
   }
 }
 
-.slider-container {
+.reference-container {
   position: absolute;
   left: 22000px;
-  background-image: url(../images/table-bg.jpg);
-  height: 100%;
-  width: 2000px;
+  background-image: url(../images/iphone.png);
+  background-size: 100% 100%;
+  bottom: 20%;
+  height: 80%;
+  width: 3000px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1106,10 +1108,11 @@ body {
   height: 180px;
   transform-style: preserve-3d;
   animation: rotate 30s linear infinite;
+  bottom: 20%;
 }
 
 .slider-2 {
-  left: 70%;
+  left: 75%;
 }
 
 .slider-1 span,
@@ -1135,12 +1138,55 @@ body {
   border-radius: 20px;
 }
 
-/* .slider-1 span:hover img,
+.slider-1 span:hover img,
 .slider-2 span:hover img {
   transform: translateY(-50px) scale(1.2);
-} */
+}
 .slider a {
   text-decoration: none;
+}
+.slider-text {
+  position: absolute;
+  top: 15%;
+  text-transform: uppercase;
+  font-size: 3.5em;
+  font-weight: 600;
+  color: #fffb73;
+  text-align: center;
+  line-height: 80px;
+}
+
+.slider-text p {
+  font-size: 0.8em;
+  color: #ffffff;
+}
+
+.freepik-icon {
+  position: absolute;
+  left: 49.5%;
+  top: 25%;
+  transform: translate(-50%);
+  width: 512px;
+  height: 512px;
+  background-image: url(../images/freepik-icon.png);
+}
+.design-text {
+  position: absolute;
+  top: 25%;
+  color: #ffffff;
+  font-size: 2em;
+  font-weight: 400;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.left {
+  left: 20%;
+}
+.right {
+  left: 75%;
+}
+.slider-img:hover + .design-text {
+  opacity: 1;
 }
 @keyframes rotate {
   0% {
@@ -1150,10 +1196,4 @@ body {
   100% {
     transform: perspective(1000px) rotateY(360deg);
   }
-}
-
-.test {
-  width: 100px;
-  height: 100px;
-  background-color: white;
 }

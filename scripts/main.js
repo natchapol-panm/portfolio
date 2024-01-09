@@ -29,11 +29,12 @@ const certificationText = document.querySelector(".certification-text");
 const book = document.querySelector(".book");
 const cover = document.querySelector(".cover");
 const pages = document.querySelectorAll(".page");
+const designTexts = document.querySelectorAll(".design-text");
+const sliderImages = document.querySelectorAll(".slider-img");
 
 const rocketTargetAnimateArray = ["870px", "870px", "640px", "640px", "350px"];
 const busTargetAnimateArray = ["13500px", "15500px", "17500px"];
 const busStartPointAnimateArray = ["15500px", "17500px", "19500px"];
-const initialZIndexPages = [3, 2, 1];
 
 const itemsHorizontalSpeedArray = [];
 const itemsVerticalSpeedArray = [];
@@ -159,7 +160,6 @@ function animateHonorContainer() {
 function animateBus(i) {
   busArray[i].style.transition = "left 0.5s ease-out";
 
-  // Apply the animation effect by changing the 'left' property
   busArray[i].style.left = busTargetAnimateArray[i];
 }
 
@@ -376,6 +376,24 @@ function storeDivs() {
   }
 }
 
+function showDesignText() {
+  sliderImages.forEach((image, index) => {
+    image.addEventListener("mouseover", function () {
+      designTexts.forEach((text) => {
+        text.style.opacity = 0;
+      });
+
+      designTexts[index].style.opacity = 1;
+    });
+
+    image.addEventListener("mouseout", function () {
+      designTexts.forEach((text) => {
+        text.style.opacity = 0;
+      });
+    });
+  });
+}
+
 function pauseAnimationPlayer() {
   playerFramesDiv.style.animationPlayState = "paused";
   playerFramesDiv.classList.remove("walk-animation");
@@ -403,35 +421,11 @@ function orientPlayer() {
   }
 }
 
-function initTouchEvents() {
-  document.addEventListener("touchstart", handleStart);
-  document.addEventListener("touchmove", handleMove);
-  document.addEventListener("touchend", handleEnd);
-}
-function handleStart(e) {
-  touchStartX = e.targetTouches[0].pageX;
-  pageVerticalPositionOnTouch = pageVerticalPosition;
-}
-function handleMove(e) {
-  e.preventDefault();
-  touchCurrentX = e.targetTouches[0].pageX;
-
-  if (canScrollOrSwipe === true) {
-    // detectPageVerticalPosition();
-    runTheseFunctionsAfterScrollOrSwipe();
-  }
-}
-function handleEnd(e) {
-  e.preventDefault();
-  touchEndX = e.changedTouches[0].pageX;
-}
-
 // window.addEventListener("beforeunload", function () {
 //   window.scrollTo(0, 0);
 // });
 
 function onLoad() {
-  initTouchEvents();
   storeDivs();
   setPageHeight();
   setItemsSpeed();
@@ -439,6 +433,7 @@ function onLoad() {
   setPositionStartProfile();
   resetVariables();
   resetFunctions();
+  showDesignText();
 }
 
 window.addEventListener("load", onLoad);
