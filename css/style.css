@@ -1151,3 +1151,14 @@ body {
     transform: perspective(1000px) rotateY(360deg);
   }
 }
+
+.test {
+  width: 100px;
+  height: 100px;
+}
+
+.test a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
