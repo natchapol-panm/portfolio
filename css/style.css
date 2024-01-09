@@ -1089,7 +1089,7 @@ body {
 .slider-container {
   position: absolute;
   left: 22000px;
-  background: linear-gradient(to right, #2c5364, #0f2027);
+  background-image: url(../images/table-bg.jpg);
   height: 100%;
   width: 2000px;
   display: flex;
@@ -1135,10 +1135,10 @@ body {
   border-radius: 20px;
 }
 
-.slider-1 span:hover img,
+/* .slider-1 span:hover img,
 .slider-2 span:hover img {
   transform: translateY(-50px) scale(1.2);
-}
+} */
 .slider a {
   text-decoration: none;
 }
